@@ -1,0 +1,27 @@
+$height: 2.5rem;
+$padding: 0.25rem;
+
+.avatar {
+  &__wrapper {
+    background-color: var(--avatar-background);
+    display: flex;
+    justify-content: space-between;
+    padding: $padding;
+    gap: 0.75rem;
+    align-items: center;
+    height: $height;
+    border-radius: calc($height / 2);
+  }
+
+  &__image {
+    background-color: white;
+    height: calc($height - calc($padding * 2));
+    width: calc($height - calc($padding * 2));
+    border-radius: calc($height / 2);
+  }
+
+  &__name {
+    margin-left: 0.75rem;
+    font-size: 0.875rem;
+  }
+}

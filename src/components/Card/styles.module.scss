@@ -1,0 +1,17 @@
+// Topbar
+$height: 2.5rem;
+$padding: 0.25rem;
+
+.card {
+  &__body {
+    background-color: var(--dark-50);
+    border-radius: 2rem;
+    position: relative;
+    padding-left: $padding;
+    margin-bottom: 1rem;
+  }
+
+  &__inside {
+    padding: 1.25rem;
+  }
+}

@@ -1,0 +1,44 @@
+.logo {
+  background-color: var(--primary);
+  height: 6rem;
+  border-radius: 2rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.5rem;
+  img {
+    transition: all 250ms ease-in-out;
+  }
+
+  &:hover {
+    img {
+      transform: translateY(-0.25rem);
+    }
+  }
+}
+
+.nav {
+  a {
+    font-size: 0.875rem;
+    border-radius: 2rem;
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+
+    margin-block: 0.5rem;
+    padding-left: 1.25rem;
+
+    background-color: var(--dark-50);
+    transition: all 150ms ease-in-out;
+  }
+  a:hover,
+  a.active {
+    background-color: var(--primary);
+    color: var(--dark-100);
+
+    img {
+      filter: grayscale(1) invert(1);
+    }
+  }
+}

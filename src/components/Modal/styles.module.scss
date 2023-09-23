@@ -1,0 +1,35 @@
+.modal {
+  background-color: transparent;
+  border: 0;
+  margin: auto;
+  color: #ffffff;
+  position: relative;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  &__inside {
+    width: 500px;
+    padding: 1.25rem;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 2rem;
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--dark-100);
+  }
+}
