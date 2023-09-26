@@ -3,11 +3,6 @@ import { getServerSession } from "next-auth";
 import { authOption } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 
-export const metadata = {
-  title: "Playbook Nouhau",
-  description: "Playbook Nouhau",
-};
-
 export default async function RootLayout({
   children,
 }: {
