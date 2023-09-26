@@ -1,20 +1,25 @@
 "use client";
 
-import { States } from "@/components/States";
-import { useFetch } from "@/hooks/useFetch";
-import { AvailabilitiesModalProps, Availability } from "./types";
-import styles from "./styles.module.scss";
-import { Button } from "@/components/forms/Button";
-import { clientApi } from "@/services/fetch";
 import { toast } from "react-toastify";
+import { useFetch } from "@/hooks/useFetch";
+import { useForm } from "react-hook-form";
+import { clientApi } from "@/services/fetch";
+import { ChevronRight } from "lucide-react";
+
+import { AvailabilitiesModalProps, Availability } from "./types";
+
+import { States } from "@/components/States";
+import Select from "@/components/forms/Select";
+import { Button } from "@/components/forms/Button";
+import Input from "@/components/forms/Input";
+
 import trash from "@/icons/trash.svg";
 import plus from "@/icons/plus.svg";
-import Select from "@/components/forms/Select";
-import { useForm } from "react-hook-form";
-import Input from "@/components/forms/Input";
-import { ChevronRight } from "lucide-react";
+
+import styles from "./styles.module.scss";
+
 import { weekDays } from "./week-days";
-import { format } from "date-fns";
+import { convertTime, invertTime } from "./time-utils";
 
 export default function AvailabilitiesModal({
   name,
@@ -28,17 +33,6 @@ export default function AvailabilitiesModal({
 
   if (isLoading) return <States.Loading />;
   if (error) return <States.NotOk />;
-
-  const convertTime = (time: string) => {
-    const date = new Date("2022-01-01T" + time + ".000Z");
-    return format(date, "HH:mm");
-  };
-
-  const invertTime = (time: string) => {
-    const fromTime = new Date("2022-01-01T" + time + ":00.000-03:00");
-    const newTime = new Date(fromTime.toISOString().slice(0, -1));
-    return format(newTime, "HH:mm:ss");
-  };
 
   const deleteAvailability = (id: number) => {
     clientApi
