@@ -1,0 +1,27 @@
+.infos {
+  h5 {
+    margin-bottom: 0.25rem;
+  }
+  margin-bottom: 1.25rem;
+}
+
+.availability {
+  justify-content: space-between;
+  background-color: var(--light);
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: 0.75rem;
+  margin-top: 0.5rem;
+
+  &,
+  &__right,
+  &__add {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  &__add {
+    margin-top: 1rem;
+  }
+}
