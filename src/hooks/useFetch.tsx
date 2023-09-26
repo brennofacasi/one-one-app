@@ -7,7 +7,8 @@ export function useFetch<Data = any, Error = any>(
   const fetcher = (url: string) => clientApi.get(url).then((res) => res.data);
   const { data, error, isLoading, isValidating, mutate } = useSWR<Data, Error>(
     url,
-    fetcher
+    fetcher,
+    { revalidateOnFocus: false }
   );
 
   return { data, error, isLoading, isValidating, mutate };
