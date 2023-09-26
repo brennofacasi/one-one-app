@@ -1,9 +1,9 @@
-import { addHours, format } from "date-fns";
+import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 export function formatDate(date: string, formatter: string) {
-  const addedHours = new Date(date);
-  return format(addedHours, formatter, {
+  const rawDate = new Date(date);
+  return format(rawDate, formatter, {
     locale: ptBR,
   });
 }
