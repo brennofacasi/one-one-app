@@ -90,7 +90,6 @@ export default function AvailabilitiesModal({
         className={styles.availability__add}
       >
         <Select
-          label='Dia da semana'
           register={register}
           field='week_day'
           options={weekDays}
