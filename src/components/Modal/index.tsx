@@ -1,19 +1,24 @@
 "use client";
 
-import { useRef } from "react";
+import Image from "next/image";
+import { createContext, useContext, useRef } from "react";
 import { Card } from "../Card";
+import classNames from "classnames";
+
 import styles from "./styles.module.scss";
 import { Button } from "../forms/Button";
-import Image from "next/image";
 import close from "@/icons/close.svg";
 
-import { ModalProps } from "./types";
+import { ModalContextProps, ModalProps } from "./types";
+
+const ModalContext = createContext({} as ModalContextProps);
 
 export default function Modal({
   buttonContent,
   icon,
   children,
   primary,
+  small,
 }: ModalProps) {
   const modal = useRef<HTMLDialogElement>(null);
 
@@ -21,13 +26,15 @@ export default function Modal({
   const closeModal = () => modal.current?.close();
 
   return (
-    <>
+    <ModalContext.Provider value={{ modal, openModal, closeModal }}>
       <Button icon={icon} onClick={openModal} primary={primary}>
         {buttonContent}
       </Button>
       <dialog className={styles.modal} ref={modal}>
         <Card>
-          <div className={styles.modal__inside}>
+          <div
+            className={classNames(styles.modal__inside, small && styles.small)}
+          >
             {children}
             <button className={styles.close} onClick={closeModal}>
               <Image src={close} alt='Ícone de fechar' />
@@ -35,6 +42,10 @@ export default function Modal({
           </div>
         </Card>
       </dialog>
-    </>
+    </ModalContext.Provider>
   );
+}
+
+export function useModalContext() {
+  return useContext(ModalContext);
 }
