@@ -1,0 +1,16 @@
+.tag {
+  font-size: 0.875rem;
+  padding: 0.15rem 0.65rem;
+  border-radius: 2rem;
+  font-weight: bold;
+}
+
+.online {
+  background-color: var(--primary-50);
+  color: var(--primary);
+}
+
+.inperson {
+  background-color: var(--purple-50);
+  color: var(--purple);
+}
