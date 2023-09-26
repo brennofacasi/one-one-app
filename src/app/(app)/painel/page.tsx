@@ -1,46 +1,35 @@
 import { Card } from "@/components/Card";
 import styles from "./styles.module.scss";
-import Image from "next/image";
-import Hero from "./hero";
-import { Header } from "@/components/Header";
-import { fetchApi } from "@/services/fetch";
-import Link from "next/link";
 
-async function getGames() {
-  const res = await fetchApi("game");
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
+import { Header } from "@/components/Header";
 
 export default async function Home() {
-  const games: GameCardProps[] = await getGames();
-
   return (
     <>
       <Header.Topbar />
-      <Hero />
-      <Card>
-        <section className={styles.recent}>
-          <h5>Jogos recentes</h5>
-          <div className={styles.recent__row}>
-            {games
-              .map((game) => (
-                <Link key={game.id} href={`/jogos/${game.id}`}>
-                  <Image
-                    width={960}
-                    height={540}
-                    src={game.image}
-                    alt='Empresa de Participação'
-                  />
-                  <h6>{game.title}</h6>
-                </Link>
-              ))
-              .slice(0, 3)}
+
+      <section className={styles.row}>
+        <Card newClass={styles.card}>
+          <div className={styles.inside}>
+            <h6>Agendamentos</h6>
+            <p className={styles.number}>12</p>
           </div>
-        </section>
-      </Card>
+        </Card>
+
+        <Card newClass={styles.card}>
+          <div className={styles.inside}>
+            <h6>Mentores</h6>
+            <p className={styles.number}>4</p>
+          </div>
+        </Card>
+
+        <Card newClass={styles.card}>
+          <div className={styles.inside}>
+            <h6>Mentorandos</h6>
+            <p className={styles.number}>15</p>
+          </div>
+        </Card>
+      </section>
     </>
   );
 }

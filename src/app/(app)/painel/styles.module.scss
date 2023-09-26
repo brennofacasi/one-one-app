@@ -1,57 +1,24 @@
-.recent {
-  padding: 1.25rem;
-  &__row {
-    margin-top: 1rem;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+.inside {
+  padding: 1rem;
+}
 
-    h6 {
-      font-weight: 300;
-      padding-top: 0.5rem;
-    }
-
-    img {
-      width: 100%;
-      height: 15rem;
-      object-fit: cover;
-      border-radius: 1rem;
-      transition: all 200ms ease-out;
-
-      &:hover {
-        transform: scale(1.025);
-      }
-    }
+.card {
+  transition: all 150ms ease-in-out;
+  box-shadow: 0;
+  &:hover {
+    transform: scale(1.025);
+    box-shadow: 0 10px 25px -15px var(--dark-50);
   }
 }
 
-.hero {
-  height: 400px;
-  border-radius: 2rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  position: relative;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
+.number {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -0.5rem;
+}
 
-  img {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-  }
-
-  &__box {
-    --white: var(--dark-100);
-    width: 50%;
-
-    h1 {
-      margin-block: 1rem;
-      color: var(--dark-100);
-      font-size: 2.5rem;
-      line-height: 1.25;
-      letter-spacing: -0.1rem;
-      font-weight: 800;
-    }
-  }
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
