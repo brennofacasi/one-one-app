@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 
 import grid from "@/icons/grid.svg";
-import games from "@/icons/games.svg";
+import users from "@/icons/users.svg";
 import layers from "@/icons/layers.svg";
 import heart from "@/icons/heart.svg";
 
@@ -18,18 +18,8 @@ export const links: Array<INavLinks> = [
     icon: grid,
   },
   {
-    label: "Jogos",
-    href: "/jogos",
-    icon: games,
-  },
-  {
-    label: "Favoritos",
-    href: "/favoritos",
-    icon: heart,
-  },
-  {
-    label: "Habilidades",
-    href: "/habilidades",
-    icon: layers,
+    label: "Mentorias",
+    href: "/mentorias",
+    icon: users,
   },
 ];
