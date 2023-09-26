@@ -40,6 +40,7 @@ export function DatePickerRange({ date, setDate }: DatePickerRangeProps) {
           onSelect={setDate}
           numberOfMonths={2}
           locale={ptBR}
+          disabled={{ before: new Date() }}
         />
       </div>
     </div>
