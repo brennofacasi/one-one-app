@@ -27,7 +27,7 @@ export default function Modal({
 
   return (
     <ModalContext.Provider value={{ modal, openModal, closeModal }}>
-      <Button icon={icon} onClick={openModal} primary={primary}>
+      <Button icon={icon} onClick={openModal} primary={primary} center>
         {buttonContent}
       </Button>
       <dialog className={styles.modal} ref={modal}>
