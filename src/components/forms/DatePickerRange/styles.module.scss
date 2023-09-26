@@ -1,0 +1,19 @@
+.date {
+  height: 3.25rem;
+  padding-inline: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--dark-25);
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  border-radius: 1rem;
+  border: 1px solid var(--dark-25);
+}
