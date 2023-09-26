@@ -7,13 +7,15 @@ import { MenteesSelect } from "./mentees";
 import { MentorsSelect } from "./mentors";
 import GetAvailability from "./get-availability";
 import { clientApi } from "@/services/fetch";
+import { useModalContext } from "@/components/Modal";
+import { toast } from "react-toastify";
 
 export default function CreateMeeting({ mutate }: CreateMeetingProps) {
   const { register, handleSubmit, watch, reset } = useForm();
+  const { closeModal } = useModalContext();
 
   const onSubmit = (values: any) => {
     const { radio, ...data } = values;
-
     const dates = radio.split(";");
 
     const slot = {
@@ -21,18 +23,22 @@ export default function CreateMeeting({ mutate }: CreateMeetingProps) {
       end_time: dates[1],
     };
 
-    const result = {
-      ...data,
-      slot,
-    };
-
     clientApi
-      .post("meeting/", result)
+      .post("meeting/", {
+        ...data,
+        slot,
+      })
       .then(() => {
         mutate();
-        console.log("Foi");
+        toast.success("Mentoria adicionada.");
       })
-      .finally(() => reset());
+      .catch((e) => {
+        toast.error(e.message);
+      })
+      .finally(() => {
+        reset();
+        closeModal();
+      });
   };
 
   const kindOptions = [
