@@ -7,6 +7,7 @@ import classNames from "classnames";
 export const Button = ({
   children,
   primary,
+  danger,
   light,
   icon,
   center,
@@ -16,6 +17,7 @@ export const Button = ({
     styles.button,
     primary && styles.primary,
     light && styles.light,
+    danger && styles.danger,
     center && styles.center
   );
 
