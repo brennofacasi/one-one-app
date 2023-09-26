@@ -7,13 +7,33 @@ $h3-size: $h4-size * $scale;
 $h2-size: $h3-size * $scale;
 $h1-size: $h2-size * $scale;
 
-:root {
-  --dark-100: #181a1b;
-  --dark-50: #242728;
-  --dark-25: #3d3f40;
+$dark100: #181a1b;
+$dark50: lighten($dark100, 50%);
+$dark25: lighten($dark100, 75%);
 
-  --white: #f5f5f5;
-  --primary: #d8e92f;
+$primary: #10dcab;
+$primary75: lighten($primary, 25%);
+$primary50: lighten($primary, 50%);
+
+$purple: #8e10dc;
+$purple75: lighten($purple, 25%);
+$purple50: lighten($purple, 50%);
+
+:root {
+  --dark-100: #{$dark100};
+  --dark-50: #{$dark50};
+  --dark-25: #{$dark25};
+
+  --white: #ffffff;
+  --light: #f5f5f5;
+
+  --primary: #{$primary};
+  --primary-75: #{$primary75};
+  --primary-50: #{$primary50};
+
+  --purple: #{$purple};
+  --purple-75: #{$purple75};
+  --purple-50: #{$purple50};
 
   --sidebar-width: 11rem;
 
@@ -24,10 +44,10 @@ $h1-size: $h2-size * $scale;
   --h5-size: #{$h5-size};
   --h6-size: #{$h6-size};
 
-  --button-background-color: var(--dark-100);
-  --button-background-color-hover: var(--dark-25);
-  --button-color: var(--white);
-  --button-color-hover: var(--white);
+  --button-background-color: var(--white);
+  --button-background-color-hover: var(--light);
+  --button-color: var(--dark-100);
+  --button-color-hover: var(--dark-100);
 }
 
 ::selection {
@@ -47,14 +67,15 @@ body {
 }
 
 body {
-  background-color: var(--dark-100);
-  color: var(--white);
+  background-color: var(--light);
+  color: var(--dark-100);
 }
 
 // Tamanhos de headings
 @for $i from 1 through 6 {
   h#{$i} {
     font-size: var(--h#{$i}-size);
+    letter-spacing: -0.03rem;
   }
 }
 
