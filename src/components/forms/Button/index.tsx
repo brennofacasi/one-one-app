@@ -2,21 +2,25 @@ import { ReactElement } from "react";
 import styles from "./styles.module.scss";
 import { ButtonProps } from "./types";
 import Image from "next/image";
+import classNames from "classnames";
 
 export const Button = ({
   children,
   primary,
+  light,
   icon,
   center,
   ...props
 }: ButtonProps): ReactElement => {
+  const styling = classNames(
+    styles.button,
+    primary && styles.primary,
+    light && styles.light,
+    center && styles.center
+  );
+
   return (
-    <button
-      className={`${styles.button} ${primary ? styles.primary : ""} ${
-        center ? styles.center : ""
-      }`}
-      {...props}
-    >
+    <button className={styling} {...props}>
       {icon && <Image src={icon} alt='Ícone' />} {children}
     </button>
   );
