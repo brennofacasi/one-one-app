@@ -1,0 +1,42 @@
+.line {
+  border-radius: 2rem;
+  background-color: var(--white);
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+
+  justify-content: space-between;
+
+  p:last-child {
+    font-size: 80%;
+    color: var(--dark-50);
+  }
+}
+
+.avatar {
+  display: block;
+  height: calc(4rem - 0.5rem);
+  width: calc(4rem - 0.5rem);
+  background-color: var(--dark-25);
+  border-radius: 4rem;
+}
+
+.infos,
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.infos {
+  gap: 3rem;
+}
+
+.actions {
+  gap: 0.25rem;
+}
+
+.people {
+  width: 250px;
+}
