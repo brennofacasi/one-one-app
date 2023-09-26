@@ -19,6 +19,10 @@ $purple: #8e10dc;
 $purple75: lighten($purple, 25%);
 $purple50: lighten($purple, 50%);
 
+$red: #f72b5b;
+$red115: darken($red, 15%);
+$red75: lighten($red, 25%);
+
 :root {
   --dark-100: #{$dark100};
   --dark-50: #{$dark50};
@@ -34,6 +38,10 @@ $purple50: lighten($purple, 50%);
   --purple: #{$purple};
   --purple-75: #{$purple75};
   --purple-50: #{$purple50};
+
+  --red-115: #{$red115};
+  --red: #{$red};
+  --red-75: #{$red75};
 
   --sidebar-width: 11rem;
 
