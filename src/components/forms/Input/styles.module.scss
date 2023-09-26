@@ -1,18 +1,3 @@
-.input {
-  height: 3.25rem;
-  font-family: inherit;
-  font-size: 1rem;
-  border-radius: 1rem;
-  border: 1px solid var(--dark-25);
-  padding-inline: 0.75rem;
-
-  &:focus,
-  &:active {
-    border: 3px solid var(--dark-50);
-    outline: none;
-  }
-}
-
 .label {
   font-size: 85%;
 }
