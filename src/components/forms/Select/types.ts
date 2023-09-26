@@ -9,6 +9,6 @@ export interface SelectProps extends React.ComponentProps<"select"> {
 }
 
 interface Option {
-  value: string;
+  value: string | number;
   label: string;
 }

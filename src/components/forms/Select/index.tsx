@@ -11,14 +11,14 @@ export default function Select({
 }: SelectProps) {
   return (
     <>
-      <label className={styles.label}>{label}</label>
+      {label && <label className={styles.label}>{label}</label>}
       <select
         className={styles.select}
-        defaultValue='selecione'
+        defaultValue=''
         {...register(field, { required })}
         {...props}
       >
-        <option disabled value='selecione'>
+        <option disabled value=''>
           Selecione...
         </option>
         {options.map((option) => (
