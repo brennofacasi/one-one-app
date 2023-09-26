@@ -2,8 +2,7 @@ import { StaticImageData } from "next/image";
 
 import grid from "@/icons/grid.svg";
 import users from "@/icons/users.svg";
-import layers from "@/icons/layers.svg";
-import heart from "@/icons/heart.svg";
+import laptop from "@/icons/laptop.svg";
 
 interface INavLinks {
   label: string;
@@ -20,6 +19,11 @@ export const links: Array<INavLinks> = [
   {
     label: "Mentorias",
     href: "/mentorias",
+    icon: laptop,
+  },
+  {
+    label: "Mentores",
+    href: "/mentores",
     icon: users,
   },
 ];
