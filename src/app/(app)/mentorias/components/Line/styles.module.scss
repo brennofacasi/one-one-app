@@ -40,3 +40,11 @@
 .people {
   width: 250px;
 }
+
+.delete {
+  display: grid;
+
+  p {
+    margin-block: 0.5rem 1rem;
+  }
+}

@@ -10,6 +10,8 @@ import video from "@/icons/video.svg";
 
 import { LineProps } from "./types";
 import { formatDate } from "@/utils/formatDate";
+import Modal from "@/components/Modal";
+import DeleteMeeting from "./delete";
 
 export default function Line({
   data,
@@ -18,12 +20,6 @@ export default function Line({
   data: LineProps;
   mutate: () => void;
 }) {
-  const deleteMeeting = () => {
-    clientApi.delete(`meeting/${data.id}`).then(() => {
-      mutate();
-    });
-  };
-
   return (
     <div className={styles.line}>
       <section className={styles.infos}>
@@ -56,7 +52,10 @@ export default function Line({
       <section className={styles.actions}>
         {data.kind === "ONLINE" && <Button icon={video} />}
         <Button icon={check} />
-        <Button icon={trash} onClick={deleteMeeting} />
+
+        <Modal icon={trash} small>
+          <DeleteMeeting id={data.id} mutate={mutate} />
+        </Modal>
       </section>
     </div>
   );
