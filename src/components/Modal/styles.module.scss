@@ -2,7 +2,6 @@
   background-color: transparent;
   border: 0;
   margin: auto;
-  color: #ffffff;
   position: relative;
 
   &::backdrop {
@@ -11,7 +10,7 @@
   }
 
   &__inside {
-    width: 500px;
+    width: 700px;
     padding: 1.25rem;
   }
 }
@@ -30,6 +29,6 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--dark-100);
+    background-color: var(--light);
   }
 }

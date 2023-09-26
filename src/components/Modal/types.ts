@@ -1,7 +1,8 @@
 import { StaticImageData } from "next/image";
 
 export interface ModalProps {
-  btnContent: string;
+  buttonContent?: string;
+  primary?: boolean;
   icon?: string | StaticImageData;
   children: React.ReactNode;
 }

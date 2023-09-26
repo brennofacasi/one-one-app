@@ -9,7 +9,12 @@ import close from "@/icons/close.svg";
 
 import { ModalProps } from "./types";
 
-export default function Modal({ btnContent, icon, children }: ModalProps) {
+export default function Modal({
+  buttonContent,
+  icon,
+  children,
+  primary,
+}: ModalProps) {
   const modal = useRef<HTMLDialogElement>(null);
 
   const openModal = () => modal.current?.showModal();
@@ -17,8 +22,8 @@ export default function Modal({ btnContent, icon, children }: ModalProps) {
 
   return (
     <>
-      <Button icon={icon} onClick={openModal}>
-        {btnContent}
+      <Button icon={icon} onClick={openModal} primary={primary}>
+        {buttonContent}
       </Button>
       <dialog className={styles.modal} ref={modal}>
         <Card>
