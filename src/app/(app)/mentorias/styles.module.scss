@@ -3,3 +3,13 @@
   gap: 0.5rem;
   margin-block: 1rem;
 }
+
+.empty {
+  border-radius: 2rem;
+  background-color: var(--dark-25);
+  opacity: 0.5;
+  height: 4rem;
+
+  display: grid;
+  place-items: center;
+}

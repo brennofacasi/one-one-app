@@ -26,9 +26,15 @@ export default function Meetings() {
       </Modal>
 
       <section className={styles.row}>
-        {data.map((item: LineProps) => (
-          <Line key={item.id} data={item} mutate={mutate} />
-        ))}
+        {data.length !== 0 ? (
+          data.map((item: LineProps) => (
+            <Line key={item.id} data={item} mutate={mutate} />
+          ))
+        ) : (
+          <div className={styles.empty}>
+            <p>Nada por aqui ainda. Que tal criar uma mentoria?</p>
+          </div>
+        )}
       </section>
     </>
   );
