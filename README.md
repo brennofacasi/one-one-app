@@ -2,10 +2,10 @@
 
 A produtividade diária de trabalhadores no mundo corporativo depende muito de fatores como saúde física, mental e bem-estar.
 
-Pensando nisso, o aplicativo **One:One** nasceu como uma plataforma de agendamentos de mentorias entre colaboradores e psicólogos, para que pudessem encaminhar metas em reuniões one-on-one.
+Pensando nisso, o aplicativo **One:One** nasceu como uma plataforma de agendamentos de mentorias entre colaboradores e psicólogos, para que possam encaminhar metas em reuniões one-on-one.
 
 
-Para esse projeto de MVP, foi desenvolvido a área do(a) gestor(a) do contrato de mentorias, possibilidando que ele(a) possa cadastrar mentores e suas disponibilidades, designar mentorandos e decidir o formato das reuniões.
+Para esse projeto de MVP, foi desenvolvido a área do(a) gestor(a) do contrato de mentorias, possibilitando que ele(a) possa cadastrar mentores e suas disponibilidades, designar mentorandos e decidir o formato das reuniões.
 
 ## Primeiros passos 🚀
 
