@@ -25,11 +25,17 @@ export default function Mentors() {
         </div>
       </Modal>
 
-      <section className={styles.row}>
-        {data.mentors.map((mentor: MentorCardProps) => (
-          <MentorCard key={mentor.id} data={mentor} mutate={mutate} />
-        ))}
-      </section>
+      {data.mentors.length !== 0 ? (
+        <section className={styles.row}>
+          {data.mentors.map((mentor: MentorCardProps) => (
+            <MentorCard key={mentor.id} data={mentor} mutate={mutate} />
+          ))}
+        </section>
+      ) : (
+        <div className={styles.empty}>
+          <p>Ninguém ainda. Que tal criar um mentor?</p>
+        </div>
+      )}
     </>
   );
 }
