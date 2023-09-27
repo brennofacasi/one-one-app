@@ -9,6 +9,7 @@ import plus from "@/icons/plus.svg";
 import { States } from "@/components/States";
 import MentorCard from "./components/MentorCard";
 import { MentorCardProps } from "./components/MentorCard/types";
+import CreateOrEditMentor from "./components/CreateOrEditMentor";
 
 export default function Mentors() {
   const { data, error, isLoading, mutate } = useFetch("mentor");
@@ -18,15 +19,15 @@ export default function Mentors() {
 
   return (
     <>
-      <Modal icon={plus} buttonContent='Criar mentor' primary>
+      <Modal icon={plus} buttonContent='Criar mentor' primary small>
         <div className={styles.modal}>
-          {/* <CreateMeeting mutate={mutate} /> */}
+          <CreateOrEditMentor mutate={mutate} />
         </div>
       </Modal>
 
       <section className={styles.row}>
         {data.mentors.map((mentor: MentorCardProps) => (
-          <MentorCard key={mentor.id} data={mentor} />
+          <MentorCard key={mentor.id} data={mentor} mutate={mutate} />
         ))}
       </section>
     </>
