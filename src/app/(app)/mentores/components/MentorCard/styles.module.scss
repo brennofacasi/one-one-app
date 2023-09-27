@@ -11,4 +11,11 @@
   border-radius: 2rem;
   display: grid;
   padding: 1rem;
+  position: relative;
+}
+
+.edit__button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
 }
