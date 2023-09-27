@@ -37,13 +37,13 @@ Certifique-se de ter o [Docker](https://docs.docker.com/engine/install/) instala
 Navegue até o diretório que contém o Dockerfile e o requirements.txt no terminal.
 Execute **como administrador** o seguinte comando para construir a imagem Docker:
 
-```
+```bash
 $ docker build -t one-one-app .
 ```
 
 Uma vez criada a imagem, para executar o container basta executar, **como administrador**, seguinte o comando:
 
-```
+```bash
 $ docker run -p 3000:3000 one-one-app
 ```
 
