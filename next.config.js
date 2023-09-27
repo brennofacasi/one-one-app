@@ -1,14 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: process.env.API_PORT,
-      },
-    ],
-  },
+  output: "standalone",
 };
 
 module.exports = nextConfig;
