@@ -11,6 +11,7 @@ export const Button = ({
   light,
   icon,
   center,
+  dark,
   ...props
 }: ButtonProps): ReactElement => {
   const styling = classNames(
@@ -18,7 +19,8 @@ export const Button = ({
     primary && styles.primary,
     light && styles.light,
     danger && styles.danger,
-    center && styles.center
+    center && styles.center,
+    dark && styles.dark
   );
 
   return (

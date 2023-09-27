@@ -7,5 +7,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   primary?: boolean;
   danger?: boolean;
   light?: boolean;
+  dark?: boolean;
   center?: boolean;
 }
