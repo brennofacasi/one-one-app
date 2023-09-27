@@ -8,6 +8,7 @@ $h2-size: $h3-size * $scale;
 $h1-size: $h2-size * $scale;
 
 $dark100: #181a1b;
+$dark75: lighten($dark100, 25%);
 $dark50: lighten($dark100, 50%);
 $dark25: lighten($dark100, 75%);
 
@@ -25,6 +26,7 @@ $red75: lighten($red, 25%);
 
 :root {
   --dark-100: #{$dark100};
+  --dark-75: #{$dark75};
   --dark-50: #{$dark50};
   --dark-25: #{$dark25};
 
