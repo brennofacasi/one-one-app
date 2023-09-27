@@ -1,12 +1,15 @@
 "use client";
 
-import styles from "./login.module.scss";
-import joystick from "@/icons/joystick.svg";
 import Image from "next/image";
-import { Button } from "@/components/forms/Button";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+
+import styles from "./login.module.scss";
+
+import joystick from "@/icons/joystick.svg";
+import { Button } from "@/components/forms/Button";
+import Input from "@/components/forms/Input";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
@@ -30,19 +33,21 @@ export default function Login() {
         />
         <h4 className={styles.login__title}>Oi. Faça seu login! ;)</h4>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className={styles.input}
-            type='text'
+          <Input
+            register={register}
+            field='username'
             placeholder='usuário'
-            {...register("username", { required: true })}
+            required
           />
-          <input
-            className={styles.input}
-            placeholder='senha'
+          <Input
+            register={register}
+            field='password'
             type='password'
-            {...register("password", { required: true })}
+            placeholder='senha'
+            required
           />
-          <Button type='submit' center>
+
+          <Button type='submit' center dark>
             Entrar
           </Button>
         </form>
