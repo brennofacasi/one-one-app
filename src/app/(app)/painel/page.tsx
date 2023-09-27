@@ -2,6 +2,11 @@ import { Card } from "@/components/Card";
 import styles from "./styles.module.scss";
 
 import { Header } from "@/components/Header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Painel",
+};
 
 export default async function Home() {
   return (
