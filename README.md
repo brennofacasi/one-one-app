@@ -1,20 +1,15 @@
-<p align="center">
- <img src="https://lh3.googleusercontent.com/drive-viewer/AITFw-wODOo4FL_047PVLNWhz4d8vQPhXv0jF1hpypPB11vCn3nsDbyzy7UhE9ySodY1tU37C35Qeme6VzNzpknPG5OJD-T5cQ=s2560" width="235" alt="Playbook Nouhau" />
-</p>
+# One:One App 💬
 
-# Playbook Nouhau
+A produtividade diária de trabalhadores no mundo corporativo depende muito de fatores como saúde física, mental e bem-estar.
 
-A [Nouhau](https://nouhau.pro/) é uma startup de transformação de culturas organizacionais por meio de metodologias inovadoras. Através de jogos empresariais, a empresa estimula o desenvolvimento de competências socioemocionais (soft skills) com estratégia.
+Pensando nisso, o aplicativo **One:One** nasceu como uma plataforma de agendamentos de mentorias entre colaboradores e psicólogos, para que pudessem encaminhar metas em reuniões one-on-one.
 
-Para esse projeto de MVP, foi desenvolvido o **Playbook Nouhau**, uma plataforma de consulta e categorização de jogos estratégicos. Na aplicação, facilitadoras e facilitadores poderão ler mais sobre os jogos, ver quais soft skills cada um potencializa, e também favoritar seus preferidos. 😎
 
-## Figma 🖥️
-
-Para acessar o protótipo digital no Figma, [clique aqui.](https://www.figma.com/file/xRPywDbWmicz81KJCqVSCN/Brenno-Cavalcante-%2F-MVP?type=design&node-id=0%3A1&mode=design&t=K4S8u09ZcgpURJaB-1)
+Para esse projeto de MVP, foi desenvolvido a área do(a) gestor(a) do contrato de mentorias, possibilidando que ele(a) possa cadastrar mentores e suas disponibilidades, designar mentorandos e decidir o formato das reuniões.
 
 ## Primeiros passos 🚀
 
-Primeiro certifique-se de que a [API Playbook Nouhau](https://github.com/brennofacasi/playbook-nouhau-api) está rodando na sua máquina.
+Primeiro certifique-se de que a [One:One API](https://github.com/brennofacasi/one-one-api) está rodando na sua máquina.
 
 Renomeie o arquivo ```env.example``` para ```.env```. Edite (se necessário) as variáveis de desenvolvimento de acordo com a tabela, caso a API esteja rodando em uma porta diferente da ```3050```.
 
@@ -33,6 +28,23 @@ $ npm run dev
 # ou
 $ yarn install
 $ yarn dev
+```
+
+## Com Docker 🐳
+
+Certifique-se de ter o [Docker](https://docs.docker.com/engine/install/) instalado e em execução em sua máquina.
+
+Navegue até o diretório que contém o Dockerfile e o requirements.txt no terminal.
+Execute **como administrador** o seguinte comando para construir a imagem Docker:
+
+```
+$ docker build -t one-one-app .
+```
+
+Uma vez criada a imagem, para executar o container basta executar, **como administrador**, seguinte o comando:
+
+```
+$ docker run -p 3000:3000 one-one-app
 ```
 
 Abra o endereço [http://localhost:3000](http://localhost:3000) e acesse a aplicação.

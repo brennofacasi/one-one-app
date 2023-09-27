@@ -13,8 +13,8 @@ const inter = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Mentor App",
-    default: "Mentor App",
+    template: "%s | One:One",
+    default: "One:One",
   },
 };
 
