@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DateRange } from "react-day-picker";
-import { format, formatISO } from "date-fns";
+import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { clientApi } from "@/services/fetch";
 
@@ -10,6 +10,8 @@ import { groupBy } from "@/utils/groupBy";
 import { Button } from "@/components/forms/Button";
 import { DatePickerRange } from "@/components/forms/DatePickerRange";
 import { States } from "@/components/States";
+import refresh from "@/icons/refresh.svg";
+
 import styles from "./styles.module.scss";
 
 export default function GetAvailability({
@@ -71,7 +73,7 @@ export default function GetAvailability({
   return (
     <>
       <DatePickerRange date={date} setDate={setDate} />
-      <Button onClick={getSlots} center light>
+      <Button onClick={getSlots} center light icon={refresh}>
         Carregar horários disponíveis
       </Button>
 
